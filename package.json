@@ -1,0 +1,23 @@
+{
+    "name": "grunt-node-modules-cachebuster",
+    "description": "Generates a file containing node module versions for node_modules defined in your package.json.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/matzeeable/grunt-node-modules-cachebuster",
+    "author": {
+        "name": "Matthias Günter",
+        "email": "support@matthias-web.com",
+        "url": "https://matthias-web.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:matzeeable/grunt-node-modules-cachebuster.git"
+    },
+    "bugs": {
+        "url": "https://github.com/matzeeable/grunt-node-modules-cachebuster/issues"
+    },
+    "license": "MIT",
+    "main": "Gruntfile.js",
+    "devDependencies": {
+        "grunt": "^1.0.0"
+    }
+}
