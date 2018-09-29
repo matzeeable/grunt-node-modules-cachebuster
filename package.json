@@ -18,6 +18,6 @@
     "license": "MIT",
     "main": "Gruntfile.js",
     "devDependencies": {
-        "grunt": "^1.0.0"
+        "grunt": "1.0.1"
     }
 }
