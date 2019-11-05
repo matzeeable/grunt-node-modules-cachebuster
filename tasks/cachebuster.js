@@ -37,8 +37,9 @@ module.exports = function(grunt) {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             format: 'json',
-            banner: ''
-        }), pkg = grunt.file.readJSON('package.json'), dependencies = Object.keys(pkg.devDependencies||[]).concat(Object.keys(pkg.dependencies||[])), versions = {}, basename, modulePkg;
+            banner: '',
+            altNodeModules: 'node_modules'
+        }), pkg = grunt.file.readJSON('package.json'), dependencies = Object.keys(pkg.devDependencies||[]).concat(Object.keys(pkg.dependencies||[])), versions = {}, basename, modulePkg, altModulePkg;
         options.formatter = options.formatter || formatters[options.format];
     
         // Iterate over all specified file groups.
@@ -50,7 +51,8 @@ module.exports = function(grunt) {
             f.src.forEach(function(folder) {
                 if (grunt.file.isDir(folder) && (basename = folder.split('/').reverse()[0]) && dependencies.indexOf(basename) > -1) {
                     modulePkg = path.join('node_modules', basename, 'package.json');
-                    if (grunt.file.isFile(modulePkg)) {
+                    altModulePkg = path.join(options.altNodeModules, basename, 'package.json');
+                    if (grunt.file.isFile(modulePkg) || (grunt.file.isFile(altModulePkg) && (modulePkg = altModulePkg))) {
                         modulePkg = grunt.file.readJSON(modulePkg);
                         if (modulePkg.version) {
                             versions[basename] = modulePkg.version;
