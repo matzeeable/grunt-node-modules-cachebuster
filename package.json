@@ -1,7 +1,7 @@
 {
     "name": "grunt-node-modules-cachebuster",
     "description": "Generates a file containing node module versions for node_modules defined in your package.json.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "homepage": "https://github.com/matzeeable/grunt-node-modules-cachebuster",
     "author": {
         "name": "Matthias Günter",
